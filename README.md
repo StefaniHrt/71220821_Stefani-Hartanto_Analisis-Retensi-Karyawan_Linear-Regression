@@ -1,0 +1,1 @@
+# 71220821_Stefani-Hartanto_Analisis-Retensi-Karyawan_Linear-Regression
