@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Tingkat Attrisi Karyawan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body >
+    <h1>Prediksi Tingkat Attrisi Karyawan</h1>
+    <form action="/predict" method="post">
+        <table>
+            <tr>
+                <td><label for="Age">Age :</label></td>
+                <td><input type="number" name="Age" required></td>
+            </tr>
+            <tr>
+                <td><label for="Gender">Gender :</label></td>
+                <td><select name="Gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="Time_of_service">Time of Service :</label></td>
+                <td><input type="number" name="Time_of_service" required></td>
+            </tr>
+            <tr>
+                <td><label for="Education_Level">Education Level :</label></td>
+                <td><input type="number" name="Education_Level" required></td>
+            </tr>
+            <tr>
+                <td><label for="Travel_Rate">Travel Rate :</label></td>
+                <td><input type="number" name="Travel_Rate" required></td>
+            </tr>
+            <tr>
+                <td><label for="Work_Life_balance">Work Life Balance :</label></td>
+                <td><input type="number" name="Work_Life_balance" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR1">VAR1 :</label></td>
+                <td><input type="number" step="0.1" name="VAR1" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR2">VAR2 :</label></td>
+                <td><input type="number" step="0.1" name="VAR2" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR3">VAR3 :</label></td>
+                <td><input type="number" step="0.1" name="VAR3" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR4">VAR4 :</label></td>
+                <td><input type="number" step="0.1" name="VAR4" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR5">VAR5 :</label></td>
+                <td><input type="number" step="0.1" name="VAR5" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR6">VAR6 :</label></td>
+                <td><input type="number" step="0.1" name="VAR6" required></td>
+            </tr>
+            <tr>
+                <td><label for="VAR7">VAR7 :</label></td>
+                <td><input type="number" step="0.1" name="VAR7" required></td>
+            </tr>
+        </table>
+        <input type="submit" value="Predict" id="btn">
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+
+        <div class="box">
+        <div id="out">
+            <p>Age: {{ age }}</p>
+            <p>Gender: {{ gender }}</p>
+            <p>Time of Service: {{ time_of_service }}</p>
+            <p>Education Level: {{ education_level }}</p>
+            <p>Travel Rate: {{ travel_rate }}</p>
+            <p>Work Life Balance: {{ work_life_balance }}</p>
+        </div>
+        <div id="out">
+            <p>VAR1: {{ var1 }}</p>
+            <p>VAR2: {{ var2 }}</p>
+            <p>VAR3: {{ var3 }}</p>
+            <p>VAR4: {{ var4 }}</p>
+            <p>VAR5: {{ var5 }}</p>
+            <p>VAR6: {{ var6 }}</p>
+            <p>VAR7: {{ var7 }}</p>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
